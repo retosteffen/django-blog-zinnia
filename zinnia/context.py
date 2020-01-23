@@ -35,6 +35,8 @@ def get_context_loop_positions(context):
         page = context['page_obj']
     except KeyError:
         return loop_counter, loop_counter
+    if (loop_counter is None or page is None):
+        return 0, 0
     total_loop_counter = ((page.number - 1) * page.paginator.per_page +
                           loop_counter)
     return total_loop_counter, loop_counter
