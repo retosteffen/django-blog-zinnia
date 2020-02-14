@@ -7,13 +7,4 @@ from zinnia.views.authors import AuthorList
 
 
 urlpatterns = [
-    url(r'^$',
-        AuthorList.as_view(),
-        name='author_list'),
-    url(_(r'^(?P<username>[.+-@\w]+)/page/(?P<page>\d+)/$'),
-        AuthorDetail.as_view(),
-        name='author_detail_paginated'),
-    url(r'^(?P<username>[.+-@\w]+)/$',
-        AuthorDetail.as_view(),
-        name='author_detail'),
 ]
